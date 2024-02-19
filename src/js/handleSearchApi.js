@@ -1,7 +1,7 @@
 function handleSearchApi(event) {
   event.preventDefault();
   const inputValue = input.value.toLowerCase();
-  const apiUrl = `https://api.jikan.moe/v4/anime?q=${inputValue}`
+  const apiUrl = `https://api.jikan.moe/v4/anime?q=${inputValue}`;
   fetch(apiUrl)
     .then((response) => response.json())
     .then((dataApi) => {
@@ -11,29 +11,27 @@ function handleSearchApi(event) {
 }
 
 function renderSeries(arraySeries, container) {
-  if( favoriteSeries.length > 0 ) {
+  if (favoriteSeries.length > 0) {
     fav.classList.remove('hidden');
   } else {
     fav.classList.add('hidden');
   }
-  
-  if( seriesResult.length > 0 ) {
+
+  if (seriesResult.length > 0) {
     res.classList.remove('hidden');
   } else {
     res.classList.add('hidden');
   }
-  
+
   container.innerHTML = '';
   const seriesLocalStorage = JSON.parse(localStorage.getItem('series'));
   for (const serie of arraySeries) {
-   
-
- 
     const titleText = document.createTextNode(serie.title);
     let imageUrl = serie.images.jpg.image_url;
     const newImageUrl = 'https://placehold.co/210x295?text=NoImageFound';
-    const imageDef ='https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png';
-    if (imageUrl === imageDef ) {
+    const imageDef =
+      'https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png';
+    if (imageUrl === imageDef) {
       imageUrl = newImageUrl;
     }
     const li = document.createElement('li');
@@ -42,9 +40,11 @@ function renderSeries(arraySeries, container) {
     const title = document.createElement('h3');
     const icon = document.createElement('i');
     articleEl.appendChild(icon);
-    icon.setAttribute('class',
-      'fa-solid fa-circle-xmark js-btnRemove card__btn');
-    
+    icon.setAttribute(
+      'class',
+      'fa-solid fa-circle-xmark js-btnRemove card__btn'
+    );
+
     img.setAttribute('src', imageUrl);
     img.setAttribute('class', 'card__img');
     img.setAttribute('alt', 'imagen anime');
@@ -60,7 +60,7 @@ function renderSeries(arraySeries, container) {
     articleEl.setAttribute('id', serie.mal_id);
     articleEl.setAttribute('class', 'js-article card');
     articleEl.appendChild(title);
-    
+
     if (container === containerRes) {
       li.classList.add('js-liResult');
       articleEl.removeChild(icon);
