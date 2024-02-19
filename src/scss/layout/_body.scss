@@ -1,0 +1,176 @@
+.list {
+  list-style: none;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  flex-direction: row;
+  padding: 5px;
+  &__fav {
+    padding: 5px 10px;
+    border: 2px solid $colorPurple;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @media (min-width: 768px) {
+      padding: 30px;
+    }
+    &--title {
+      color: $colorWhite;
+      font-family: $font-main;
+      font-size: 2rem;
+      background-color: $colorPurple;
+      text-align: center;
+      border-radius: 15px;
+      padding: 4px;
+      @media (min-width: 768px) {
+        font-size: 3rem;
+        padding: 15px;
+      }
+    }
+    &--btn {
+      cursor: pointer;
+      padding: 3px;
+      border-radius: 10px;
+      border: solid 1px $colorPink;
+      font-size: 1.3rem;
+      color: $colorWhite;
+      font-family: $font-main;
+      background-color: $colorPink;
+      @media (min-width: 768px) {
+        font-size: 2rem;
+        padding: 10px;
+      }
+    }
+    &--ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+  &__res {
+    padding: 5px 10px;
+    border: 2px solid rgb(101, 131, 230);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @media (min-width: 768px) {
+      padding: 30px;
+    }
+    &--title {
+      color: $colorWhite;
+      font-family: $font-main;
+      font-size: 2rem;
+      background-color: $colorBlue;
+      text-align: center;
+      border-radius: 15px;
+      padding: 4px;
+      @media (min-width: 768px) {
+        font-size: 3rem;
+        padding: 15px;
+      }
+    }
+    &--ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-main;
+  padding: 8px;
+  color: $colorBlue;
+  &__title {
+    font-size: 1.5rem;
+    text-align: center;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      width: 250px;
+    }
+  }
+  &__btn {
+    align-self: flex-end;
+    font-size: 25px;
+    cursor: pointer;
+    color: $colorPink;
+  }
+  &__img {
+    width: 105px;
+    height: 150px;
+    @media (min-width: 768px) {
+      width: 157px;
+      height: 225px;
+    }
+  }
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+  &__input {
+    font-family: $font-main;
+    padding: 5px;
+    height: 30px;
+    width: 200px;
+    font-size: 2rem;
+    border-color: $colorPink;
+    color: $colorPink;
+    &::placeholder {
+      color: pink;
+      font-family: $font-main;
+      border-color: pink;
+    }
+    @media (min-width: 768px) {
+      height: 50px;
+      width: 300px;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    color: $colorWhite;
+    font-family: $font-main;
+    font-size: 2rem;
+    background-color: $colorPink;
+    padding: 4px;
+    border-radius: 25px;
+    border: solid 1px $colorPink;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      padding: 10px;
+    }
+  }
+}
+
+.favorite {
+  background-color: $colorPurple;
+  border-radius: 15px;
+  color: $colorWhite;
+}
+
+.hidden {
+  display: none;
+}
